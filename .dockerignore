@@ -35,3 +35,11 @@
 /app/assets/builds/*
 !/app/assets/builds/.keep
 /public/assets
+
+# Ignore sensitive files
+config/database.yml
+config/secrets.yml
+
+# Ignore build artifacts
+/bin/
+/node_modules/

@@ -1,17 +1,17 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
    
 </head> 
 <body>
     <nav class="nav">
         <% if current_user %>
-            <%= button_to "Logout", logout_path, method: :delete,class: 'logout'%>
+          <%= button_to "Logout", logout_path, method: :delete,class: 'logout'%>
         <% else %>
-            <%= link_to "Log In", login_path, class: 'logins' %>
-             <%= link_to 'Sign Up', new_hr_path,class:"signup"%> 
+          <%= link_to "Log In", login_path, class: 'logins' %>
+          <%= link_to 'Sign Up', new_hr_path,class:"signup"%> 
         <% end %>
     </nav>
 </body>
