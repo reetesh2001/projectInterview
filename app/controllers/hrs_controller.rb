@@ -20,9 +20,7 @@ class HrsController < ApplicationController
   end
 
   private
-
   def hr_params
     params.require(:hr).permit(:name, :email, :status, :password, :password_confirmation, :phone_number)
   end
-
 end
