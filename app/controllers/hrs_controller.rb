@@ -13,10 +13,29 @@ class HrsController < ApplicationController
     @hr = Hr.new(hr_params)
     if @hr.save
       session[:user_id]=@hr.id
+      redirect_to @hr, notice: 'User was successfully created.'
+    else
+      render :new, status:422
+    end
+  end
+
+  def edit
+    @hr = Hr.find(params[:id])
+  end
+
+  def update
+    @hr = Hr.find(params[:id])
+    if @hr.update(hr_params)
       redirect_to @hr
     else
-      render :new
+      render :edit
     end
+  end
+
+  def destroy
+    @hr = Hr.find(params[:id])
+    @hr.destroy
+    redirect_to root_path, status: :see_other
   end
 
   private

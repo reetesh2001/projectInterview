@@ -1,1 +1,38 @@
-<h2>hr path show</h2>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <%= stylesheet_link_tag 'hrshow' %>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="user">
+      <h1>User Profile<h1></h1>
+      <p>
+        <h2>Name:</h2>
+        <%= @hr.name %>
+      </p>
+      <p>
+        <h2>Email:</h2>
+        <%= @hr.email%>
+      </p>
+      <p>
+        <h2>Status:</h2>
+        <%= @hr.status %>
+      </p>
+      <p>
+        <h2>Phone</h2>
+        <%=@hr.phone_number%>
+      </p>
+      <p>
+        <%= link_to 'Edit', edit_hr_path %>
+      </p>
+    
+      <p>
+        <%= link_to "Delete", hr_path(@hr), data: {turbo_method: :delete,turbo_confirm: "Are you sure?"} %>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
