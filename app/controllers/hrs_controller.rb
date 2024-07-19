@@ -1,17 +1,10 @@
 class HrsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :create]
-  skip_before_action :authenticate_user!, only: [:new, :create]
 
   def show
     @hr = Hr.find_by(id: params[:id])
   end
-  def show
-    @hr = Hr.find_by(id: params[:id])
-  end
 
-  def new
-    @hr = Hr.new
-  end
   def new
     @hr = Hr.new
   end
@@ -29,7 +22,7 @@ class HrsController < ApplicationController
   def edit
     @hr = Hr.find(params[:id])
   end
-  
+
   def update
     @hr = Hr.find(params[:id])
     if @hr.update(hr_params)
@@ -38,13 +31,13 @@ class HrsController < ApplicationController
       render :edit
     end
   end
-    
+
   def destroy
     @hr = Hr.find(params[:id])
     @hr.destroy
     redirect_to root_path, status: :see_other
   end
-  
+
   private
   def hr_params
     params.require(:hr).permit(:name, :email, :status, :password, :password_confirmation, :phone_number)
