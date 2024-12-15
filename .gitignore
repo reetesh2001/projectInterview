@@ -33,3 +33,12 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore test fixtures
+/test/fixtures/*.yml
+
+# Ignore specific test file
+test/models/hr_test.rb
+
+# Ignore YAML files
+*.yml
